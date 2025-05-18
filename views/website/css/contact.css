@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+		font-family: "Segoe UI", sans-serif;
+		background: linear-gradient(to right, gray, black);
+		color: #333;
+}
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: #000;
+	display: flex;
+	justify-content: flex-end;
+	gap: 5px;
+	padding: 15px 30px;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+.navbar a {
+	color: #66fcf1;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+	transition: color 0.3s;
+	padding: 10px 15px;
+}
+
+.navbar a:hover {
+	color: #45a29e;
+}
+
+/* Remove duplicate nav styles and use only .navbar */
+
+.contact-section {
+	background: linear-gradient(to right, gray, black);
+	max-width: 500px;
+	margin: 40px auto;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: cyan;
+}
+
+.contact-info p {
+	font-size: 16px;
+	margin: 12px 0;
+	color: black;
+}
+
+.contact-info i {
+	margin-right: 8px;
+	color: cyan;
+}
+
+.contact-info span {
+	font-weight: bold;
+}

@@ -1,0 +1,308 @@
+/* General Body */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, gray, black);
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap; /* Allows wrapping if screen is small */
+  gap: 20px;
+  padding: 22px 30px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  color: #66fcf1;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #45a29e;
+}
+
+/* Banner and Static Image */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  margin-top: 60px;
+  background: #000;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Banner Text */
+.banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: yellow;
+  font-size: 2rem;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+    padding: 10px 15px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+.banner-title {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0 10px;
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+  }
+
+  .genres h2 {
+    font-size: 24px;
+  }
+
+  .genre-list div {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  animation: bannerImgZoom 6s ease-in-out infinite alternate;
+  display: block;
+  margin: 0 auto;
+}
+
+@keyframes bannerImgZoom {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.banner-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: yellow;
+  font-size: 2.5rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  text-shadow: 0 4px 24px #000, 0 1px 0 #333;
+  letter-spacing: 2px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.7em 1.5em;
+  border-radius: 12px;
+  animation: bannerTitleFade 3s ease-in-out infinite alternate, bannerTitleFlash 1.2s linear infinite;
+}
+
+@keyframes bannerTitleFade {
+  0% {
+    opacity: 0.7;
+    letter-spacing: 2px;
+  }
+
+  50% {
+    opacity: 1;
+    letter-spacing: 8px;
+  }
+
+  100% {
+    opacity: 0.7;
+    letter-spacing: 2px;
+  }
+}
+
+@keyframes bannerTitleFlash {
+
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  10% {
+    filter: brightness(1.7);
+  }
+
+  20% {
+    filter: brightness(1);
+  }
+}
+
+.banner-flash {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.45) 80%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  animation: bannerFlash 2.5s linear infinite;
+  z-index: 1;
+}
+
+@keyframes bannerFlash {
+
+  0%,
+  70% {
+    opacity: 0;
+    transform: translateX(-60%) skewX(-20deg);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateX(40%) skewX(-20deg);
+  }
+
+  80% {
+    opacity: 0;
+    transform: translateX(100%) skewX(-20deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) skewX(-20deg);
+  }
+}
+
+.banner-title {
+  z-index: 2;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 85%;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(300px * 6);
+  /* 6 slides */
+  animation: slideLeft 20s linear infinite;
+}
+
+.carousel-slide {
+  flex: 0 0 300px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-thumb {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.carousel-caption h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.2rem;
+  color: yellow;
+}
+
+.carousel-caption p {
+  margin: 0;
+  color: black;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-900px);
+    /* 3 slides width */
+  }
+}
+
+@media (max-width: 1000px) {
+  .carousel-track {
+    width: calc(220px * 6);
+    animation: slideLeftSmall 9s linear infinite;
+  }
+
+  .carousel-slide {
+    flex: 0 0 220px;
+  }
+
+  @keyframes slideLeftSmall {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-660px);
+    }
+  }
+}
