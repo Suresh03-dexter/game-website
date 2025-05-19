@@ -44,7 +44,7 @@
 **Note:** Make sure your project folder name is `Test` or adjust the URLs accordingly.
 
 
-🗂️ Project Structure & Functionality
+##🗂️ Project Structure & Functionality
 
 📁 Root (Test/)
 	- composer.json, composer.lock — Composer package config
