@@ -42,3 +42,46 @@
 ---
 
 **Note:** Make sure your project folder name is `Test` or adjust the URLs accordingly.
+
+
+🗂️ Project Structure & Functionality
+
+📁 Root (Test/)
+	- composer.json, composer.lock — Composer package config
+
+	- config.php — DB connection & settings
+
+	- game.sql — MySQL database dump
+
+	- Readme.md — Project documentation
+
+📁 controller/
+	- Handles backend request logic.
+
+	- admin/game/ — store.php, update.php, delete.php for managing games
+
+	- admin/enquiry/ — store.php, delete.php for handling enquiries
+
+📁 models/
+	- Represents data and business logic.
+
+	- Model.php — Base class for database interaction
+
+	- Game.php, Enquiry.php, User.php — Model classes
+
+📁 vendor/
+	- Composer dependencies and autoload files.
+
+📁 views/
+	- Frontend presentation layer.
+
+┗ 📁 website/
+	- index.php, aboutus.php, contact.php, services.php
+
+	- css/, js/, images/ — Assets for public website
+
+┗ 📁 admin/
+	- login.php, loginpage.php, logout.php, sidebar.php
+
+	- css/main.css — Admin dashboard styling
+
